@@ -14,7 +14,6 @@ services:
       - dhparam:/etc/nginx/dhparam
       - certs:/etc/nginx/certs:ro
       - /var/run/docker.sock:/tmp/docker.sock:ro
-    network_mode: bridge
     restart: always
 
   acme-companion:
@@ -32,7 +31,6 @@ services:
     environment:
       - DEFAULT_EMAIL=home.100terres.com@100terres.com
       - NGINX_PROXY_CONTAINER=nginx-proxy
-    network_mode: bridge
     restart: always
 
 volumes:
